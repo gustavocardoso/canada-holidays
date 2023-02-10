@@ -34,15 +34,15 @@ export default function Provincial() {
 
   return (
     <>
-      <div className='grid grid-cols-12 gap-12 mt-8 content'>
+      <div className='md:grid md:grid-cols-12 md:gap-12 mt-8 content'>
         {provinces.map(province => (
           <Card
             key={province.id}
             width='col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3'
-            aspect='aspect-video'
+            margin='mb-8 md:mb-0'
           >
             <span className='transition-all group-hover:-rotate-2 group-hover:scale-125'>
-              <h2 className='mb-2 text-2xl font-semibold leading-none text-white drop-shadow-md'>
+              <h2 className='text-2xl font-semibold leading-none text-white drop-shadow-md'>
                 <Link to={`/holidays/provincial/${province.id?.toLowerCase()}`} prefetch='intent'>
                   {province.nameEn}
                 </Link>

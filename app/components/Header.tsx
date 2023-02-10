@@ -56,15 +56,19 @@ export default function Header() {
           </svg>
         </Link>
 
-        <h2 className='font-bold leading-tight tracking-tight text-center text-white font-oswald text-7xl drop-shadow-lg'>
+        <h2 className='font-bold leading-tight tracking-tight text-center text-white font-oswald text-4xl md:text-7xl drop-shadow-lg'>
           Canadian Holidays{' '}
-          <span className='block text-6xl font-extralight'>in {new Date().getFullYear()}</span>
+          <span className='block text-3xl md:text-6xl font-extralight'>
+            in {new Date().getFullYear()}
+          </span>
         </h2>
+      </header>
 
+      <nav className='container flex flex-col items-center justify-center px-4 mx-auto footer text-zinc-200'>
         {matches[1].pathname !== '/' && (
-          <div className='grid w-1/3 grid-cols-2 px-4 py-2 mt-8 divide-x rounded divide-white/20 bg-zinc-900/30'>
+          <div className='w-full md:w-1/3 py-2 divide-x rounded divide-white/20 bg-zinc-900/30 flex justify-around'>
             <Link
-              className='text-lg text-center transition-colors text-zinc-300 hover:text-white'
+              className='w-full text-base md:text-lg text-center transition-colors text-zinc-300 hover:text-white'
               to='/holidays/federal'
               prefetch='intent'
             >
@@ -72,7 +76,7 @@ export default function Header() {
             </Link>
 
             <Link
-              className='text-lg text-center transition-colors text-zinc-300 hover:text-white'
+              className='text-base w-full md:text-lg text-center transition-colors text-zinc-300 hover:text-white'
               to='/holidays/provincial'
               prefetch='intent'
             >
@@ -80,7 +84,7 @@ export default function Header() {
             </Link>
           </div>
         )}
-      </header>
+      </nav>
     </>
   )
 }

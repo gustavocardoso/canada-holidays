@@ -77,46 +77,48 @@ export default function ProvincialId() {
 
   return (
     <>
-      <div className='pb-4 text-2xl font-semibold text-center uppercase drop-shadow-md'>
+      <div className='pb-2 pt-4 text-xl md:text-2xl font-semibold text-center uppercase drop-shadow-md'>
         {province.nameEn}
       </div>
-      <div className='grid grid-cols-12 gap-12 mt-8 content'>
+      <div className='md:grid md:grid-cols-12 md:gap-12 mt-8 content'>
         {province.holidays.map(holiday => (
           <Card
             key={holiday.date}
             width='col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3'
-            aspect='aspect-video'
+            aspect='md:aspect-video'
+            margin='mb-8 md:mb-0'
           >
-            <div className='transition-all group-hover:-rotate-2 group-hover:scale-125'>
-              <h2 className='mb-2 text-2xl font-medium leading-none text-white drop-shadow-md'>
+            <div className='flex justify-center flex-col transition-all group-hover:-rotate-2 group-hover:scale-125'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='icon icon-tabler icon-tabler-calendar-event mx-auto'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                strokeWidth='2'
+                stroke='currentColor'
+                fill='none'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+                <path d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'></path>
+                <path d='M16 3l0 4'></path>
+                <path d='M8 3l0 4'></path>
+                <path d='M4 11l16 0'></path>
+                <path d='M8 15h2v2h-2z'></path>
+              </svg>
+
+              <h2 className='mb-1 text-xl md:text-2xl font-medium leading-none text-white drop-shadow-md'>
                 {holiday.nameEn}
               </h2>
 
-              <span className='flex items-center justify-center gap-1 font-sans text-zinc-300 group-hover:text-[#f61793] transition-all'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='icon icon-tabler icon-tabler-calendar-event'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  strokeWidth='2'
-                  stroke='currentColor'
-                  fill='none'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-                  <path d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'></path>
-                  <path d='M16 3l0 4'></path>
-                  <path d='M8 3l0 4'></path>
-                  <path d='M4 11l16 0'></path>
-                  <path d='M8 15h2v2h-2z'></path>
-                </svg>
+              <span className='flex font-extralight items-center justify-center gap-1 font-sans text-zinc-300 group-hover:text-[#f61793] transition-all'>
                 {holiday.date}
               </span>
 
               {holiday.date === province.nextHoliday.date && (
-                <p className='p-1 mt-6 text-sm font-medium tracking-wide uppercase transition-all bg-black/5 group-hover:mt-2 group-hover:bg-yellow-200 group-hover:text-zinc-900'>
+                <p className='p-1 mt-6 text-sm tracking-wide uppercase transition-all bg-black/5 group-hover:mt-2 group-hover:bg-yellow-200 text-zinc-900'>
                   Next Holiday!
                 </p>
               )}

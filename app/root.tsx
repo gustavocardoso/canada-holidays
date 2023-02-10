@@ -28,7 +28,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className='flex flex-col items-center justify-center min-h-screen bg-cover bg-main text-zinc-50'>
+      <body className='flex flex-col items-center md:justify-center min-h-screen bg-cover bg-main text-zinc-50'>
         <Header />
 
         <div className='container p-4 mx-auto'>
